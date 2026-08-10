@@ -70,10 +70,10 @@ def option_3():
    
     if '区域' in df.columns:
         if '销量' in df.columns:
-            report_sales = df.groupby('区域')['销量'].agg(['count', 'sum', 'mean', 'max', 'min'])
+            report_sales = df.groupby('区域')['销量'].agg(['count', 'sum', 'mean', 'max', 'min']).reset_index()
             print("区域统计报表：")
             print(report_sales)
-            report_sales.to_excel(os.path.join(output_path, f"区域报表_{timestamp()}.xlsx"),index = False)
+            report_sales.to_excel(os.path.join(output_path, f"区域报表_{timestamp()}.xlsx"), index=False)
             print(f"已保存至{output_path}")
         else:
             print("未查找到销量列，请检查源文件。")
