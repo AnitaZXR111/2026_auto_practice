@@ -1,1 +1,1 @@
-# Intermediate - Independent from Basic
+# Intermediatc
